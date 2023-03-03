@@ -45,8 +45,8 @@ backup:
   type: git
   theme: next
   message: This is my blog backup
-  repo:
-    github: https://github.com/NXXG1024/backup.git,main
+  repository:
+    backup: https://github.com/NXXG1024/backup.git,main
 marked:
   prependRoot: true
   poseAsset: true
