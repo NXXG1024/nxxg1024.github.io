@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-03-05T15:02:49.573Z</updated>
+  <updated>2023-03-05T15:17:33.118Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2023/03/05/%E7%A1%AC%E7%9B%98%E6%8E%A5%E5%8F%A3%E5%8F%91%E5%B1%95%E5%8F%B2/"/>
+    <id>http://example.com/2023/03/05/%E7%A1%AC%E7%9B%98%E6%8E%A5%E5%8F%A3%E5%8F%91%E5%B1%95%E5%8F%B2/</id>
+    <published>2023-03-05T15:17:33.117Z</published>
+    <updated>2023-03-05T15:17:33.118Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="硬盘接口发展史"><a href="#硬盘接口发展史" class="headerlink" title="硬盘接口发展史"></a>硬盘接口发展史</h3><h4 id="硬盘分为两类："><a href="#硬盘分为两类：" class="headerlink" title="硬盘分为两类："></a>硬盘分为两类：</h4><p>机械硬盘、固态硬盘</p><h4 id="机械硬盘接口历程："><a href="#机械硬盘接口历程：" class="headerlink" title="机械硬盘接口历程："></a>机械硬盘接口历程：</h4><p>IDE —&gt;SATA —&gt; SCSI —&gt;SAS</p><ul><li><p><strong>IDE（Integrated Drive Electronics，电子集成驱动器）</strong>：IDE是并口盘，不支持热插拔，且数据传输速度慢，但IDE接口的硬盘价格低廉且性价比高，其中以ATA（Advanced Technology Attachment）（IDE）接口的硬盘的数据传输速度为最，达到了133MBps</p></li><li><p><strong>SATA（Serial ATA，串行ATA）</strong>：SATA硬盘支持热插拔（最大插拔次数约两百次），与总线最大带宽无关，而是内置时钟，最大传输距离一米，最大传输速度（SATA3.0）为6Gbps≈768MBps。</p></li><li><p><strong>SCSI（Small Computer System Interface，小型计算机系统接口）</strong>：SCSI接口的硬盘速度快，稳定性好，多用于服务器，适合做磁盘阵列；该接口具有应用范围广，多任务，带宽大，CPU占用率低且支持热插拔。</p></li><li><p><strong>SAS（Serial Attached SCSI，串行SCSI）</strong>：与SATA技术的硬盘相同，通过串行技术，获取更大数据传输速度，此接口是为改善存储系统的效率、可用性和扩充性而设计的，并且兼容SATA硬盘。</p></li></ul><h4 id="固态硬盘接口历程："><a href="#固态硬盘接口历程：" class="headerlink" title="固态硬盘接口历程："></a>固态硬盘接口历程：</h4><p>SATA —&gt;mSATA —&gt;SATA Express —&gt;M.2 —&gt;U.2</p><ul><li><strong>SATA</strong>：与机械硬盘相同，作为固态硬盘进入家用市场的尝试。</li><li><strong>mSATA</strong>：是小型化的SATA接口，速度与SATA接口相同</li><li><strong>SATA Express</strong>：SATA接口的改良版</li><li><strong>M.2接口</strong>：分为两类，即Socket 2和Socket 3，其中Socket 2是为SATA SSD向PCIe过渡准备的，而Socket 3则就是为PCIe准备的。</li><li><strong>U.2接口</strong>：本质上是SATA Express，其设计思路与SATA Express大差不差，都是为了尽可能利用现有的接口，但带宽更大，且支持的协议也更多。</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;硬盘接口发展史&quot;&gt;&lt;a href=&quot;#硬盘接口发展史&quot; class=&quot;headerlink&quot; title=&quot;硬盘接口发展史&quot;&gt;&lt;/a&gt;硬盘接口发展史&lt;/h3&gt;&lt;h4 id=&quot;硬盘分为两类：&quot;&gt;&lt;a href=&quot;#硬盘分为两类：&quot; class=&quot;headerlink</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
