@@ -18,8 +18,8 @@
   
   <entry>
     <title></title>
-    <link href="http://example.com/2023/03/05/%E7%A1%AC%E7%9B%98%E6%8E%A5%E5%8F%A3%E5%8F%91%E5%B1%95%E5%8F%B2/"/>
-    <id>http://example.com/2023/03/05/%E7%A1%AC%E7%9B%98%E6%8E%A5%E5%8F%A3%E5%8F%91%E5%B1%95%E5%8F%B2/</id>
+    <link href="http://example.com/2023/03/05/HDI_interface/"/>
+    <id>http://example.com/2023/03/05/HDI_interface/</id>
     <published>2023-03-05T15:17:33.117Z</published>
     <updated>2023-03-05T15:17:33.118Z</updated>
     
@@ -61,7 +61,7 @@
     <link href="http://example.com/2023/03/01/reverse-shell/"/>
     <id>http://example.com/2023/03/01/reverse-shell/</id>
     <published>2023-03-01T13:17:10.000Z</published>
-    <updated>2023-03-05T15:02:49.573Z</updated>
+    <updated>2023-03-05T15:19:05.152Z</updated>
     
     <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="(写在前面)"></a>(写在前面)</h2><h3 id="0-为什么想写这个"><a href="#0-为什么想写这个" class="headerlink" title="0.为什么想写这个"></a>0.为什么想写这个</h3><p>今天尝试搭建了vulhub靶场（CentOS），搭建过程中出了n个问题，但都在网上找到了答案，<del>然后这个过程似乎好像可以再水一期博客</del>，在查找的过程中发现了一个靶场的玩法是可以做反弹shell的，而且正巧，之前，在上课的过程中，老师也提到过反弹shell的知识，正好可以复习一下<del>（现在看来，我上课压根就没听明白老师讲的反弹shell :{ ）</del>，还好，还有时间去学。</p><h3 id="1-什么是反弹shell（reverse-shell）"><a href="#1-什么是反弹shell（reverse-shell）" class="headerlink" title="1.什么是反弹shell（reverse shell）"></a>1.什么是反弹shell（reverse shell）</h3><p>反弹shell，就是攻击机监听在某个TCP&#x2F;UDP端口为服务端，目标机主动发起请求到攻击机监听的端口，并将其命令行的输入输出转到攻击机。<br><a href="https://cloud.tencent.com/developer/article/1818091">参考链接似乎好像没太看明白，emmm。。。</a><br>那咱换个说法（虽然也是个参考的，但我觉得讲的真的很不错）</p><ul><li>先弹shell就是正向shell，后连接</li><li>后弹shell就是反向shell，先监听</li></ul><p><strong>正向shell：客户端想要获得服务端的shell</strong></p><ul><li>假设小黑是一名黑客</li><li>他悄咪咪溜进了知乎总部大楼，发现一台刘看山的电脑，但是刘看山出门了</li><li>于是小黑通过nc将这台电脑的控制权通过23333端口发射出去</li><li>小黑做了一系列的操作，又悄咪咪的原路返航</li><li>回到家后，通过nc连上刘看山的电脑</li><li>后来，刘看山的隐私泄露了~</li><li>（这里小黑是客户端，刘看山是服务端，服务端发射shell）</li></ul><p><strong>反向shell：服务端想要获得客户端的shell（也就是反弹shell）</strong></p><ul><li>假设小黑是一名黑客</li><li>他悄咪咪溜进了知乎总部大楼，发现一台刘看山的电脑，但是刘看山出门了</li><li>小黑发现电脑里有一个有趣的文件（刘看山的秘密）</li><li>小黑下载这个文件到自己的U盘里，又悄咪咪的原路返航</li><li>回到家后，小黑打开这个文件</li><li>发现电脑被刘看山控制了~</li><li>（这里小黑是客户端，刘看山是服务端，客户端发射shell）<br>这样一看，反弹shell似乎好像没那么难了（感谢博主）<br>这里附上链接：<a href="https://zhuanlan.zhihu.com/p/166165803">参考链接</a></li></ul><h3 id="2-漏洞复现："><a href="#2-漏洞复现：" class="headerlink" title="2.漏洞复现："></a>2.漏洞复现：</h3><ol><li>实验环境：CentOS7(VMware)，docker，vulhub&#x2F;bash&#x2F;shellshock<br><img src="/.com//reverse-shell.png" alt="图例1"></li><li>实验过程：<ol><li>首先,通过浏览器访问到对应页面<img src="/.com//first-step.png" alt="图例2"></li><li>使用burpsuit抓包<img src="/.com//second-step.png" alt="图例3"></li><li>修改User-Agent( () { :;};echo ; echo; echo $(&#x2F;bin&#x2F;ls &#x2F;);)<img src="/.com//third-step.png" alt="图例4"></li><li>发送修改后的报文：<img src="/.com//fourth-step.png" alt="图例5"></li><li>注意观察收到的回复：（这就是漏洞）<img src="/.com//response.png" alt="回复结果"></li><li>之后才是正题，大家可以期待一下哦:-(|)<a href="https://blog.csdn.net/weixin_43071873/article/details/110233234?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-110233234-blog-124807426.pc_relevant_3mothn_strategy_recovery&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-110233234-blog-124807426.pc_relevant_3mothn_strategy_recovery&utm_relevant_index=1">提前感谢一下大佬的倾情奉献</a></li><li></li></ol></li></ol>]]></content>
     
